@@ -59,7 +59,7 @@ int main()
     {
         cout << "Enter profit of P" << i + 1 << ": ";
         cin >> a[i].p;
-        cout << "Enter weight of P" << i + 1 << ": ";
+        cout << "Enter weight of W" << i + 1 << ": ";
         cin >> a[i].w;
         a[i].p_w = (float)a[i].p / a[i].w;
     }
