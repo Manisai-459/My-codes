@@ -65,7 +65,7 @@ int main()
     }
     quick_sort(a, 0, n - 1); // ! O(nlogn)
     int i = n - 1;
-    while (W) // ! O(n)
+    while (W && i>=0) // ! O(n)
     {
         if (a[i].w > W)
         {
