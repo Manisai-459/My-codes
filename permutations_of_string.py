@@ -15,4 +15,4 @@ n = input("Enter string : ")
 s = []
 for i in n:
     s.append(i)
-permutate(s, 0, len(n)-1)  # ! 2^n typed od arrangements
+permutate(s, 0, len(n)-1)  # ! 2^n typed of arrangements
