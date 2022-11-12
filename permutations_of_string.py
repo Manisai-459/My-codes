@@ -7,7 +7,7 @@ def permutate(s, l, r):
         s[l], s[i] = s[i], s[l]
         # ! part from 0-l is fixed ,so we can re arrange l+1 to r , to find different ways to arrange
         permutate(s, l+1, r)
-        # ! retain back to original position (backrack) , we can again swap and find any combination
+        # ! retain back to original position (backtrack) , we can again swap and find any combination
         s[l], s[i] = s[i], s[l]
 
 
