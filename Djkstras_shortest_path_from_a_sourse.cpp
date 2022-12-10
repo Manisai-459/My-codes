@@ -15,7 +15,7 @@ int min_vertex(int *dist, bool *visited, int n) // ! finds the minimum distance 
     return min_v;
 }
 // ! u = selected vertex , v = remaining all non visited vertex
-// ! if ( d[u] + g[u][v] < d[v]) : d[v] = d[u] + g[u][v] < d[v]
+// ! if ( d[u] + g[u][v] < d[v]) : d[v] = d[u] + g[u][v]
 // ! here d[u] = represenets the distance of vertex 'u' from sourse node - recursively
 void djkstra_algo(int sourse, int n)
 {
