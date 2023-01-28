@@ -1,0 +1,63 @@
+class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        if(!list1)
+            return list2;
+        if(!list2)
+            return list1;
+        ListNode *res;
+        if(list1->val>list2->val){
+            res = list2;
+            list2 = list2->next;
+        }
+        else{
+            res = list1;
+            list1 = list1->next;
+        }
+        res->next = mergeTwoLists(list1,list2);
+        return res;
+    }
+};
+-------------------------------------------------------------------
+class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        if(!list1)
+            return list2;
+        if(!list2)
+            return list1;
+        ListNode *pre,*pre1=list2,*nxt,*res=list2;
+        while(list1){
+            pre = list2;
+            if(list1->val > list2->val){
+                while(list2){
+                    if(list1->val<list2->val)
+                        break;
+                    pre = list2;
+                    list2 = list2->next;
+                }
+                nxt = list1->next;
+                list1->next = pre->next;
+                pre1 = pre;
+                list2 = list1;
+                pre->next = list1;
+                list1 = nxt;
+
+            }
+            else{
+                nxt = list1->next;
+                if(pre1 == list2){
+                    res = list1;
+                    list1->next = pre1;
+                }
+                else{
+                    list1->next = pre1->next;
+                    pre1->next = list1;
+                }   
+                pre1 = list1;
+                list1 = nxt;
+            }
+        }
+        return res;
+    }
+};
